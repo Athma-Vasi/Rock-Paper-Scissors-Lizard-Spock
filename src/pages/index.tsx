@@ -10,7 +10,7 @@ const Home: NextPage = () => {
         <ScoreBoard />
       </div>
 
-      <div className="h-[500px] w-[500px] p-6 outline-dashed">
+      <div className="h-[448.3px] w-[500px] p-6 outline-dashed">
         <Board />
       </div>
 
@@ -20,5 +20,6 @@ const Home: NextPage = () => {
     </div>
   );
 };
+//w:29, h:26
 
 export default Home;

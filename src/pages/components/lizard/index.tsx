@@ -4,8 +4,8 @@ import iconLizard from "../../../assets/images/icon-lizard.svg";
 
 function Lizard() {
   return (
-    <div className="h-full w-full rounded-full bg-gradient-to-b from-lizardGradientFrom to-lizardGradientTo p-4 outline-dotted">
-      <div className="grid h-full w-full place-content-center rounded-full bg-white outline-dashed">
+    <div className="h-full w-full rounded-full bg-gradient-to-b from-lizardGradientFrom to-lizardGradientTo p-4 ">
+      <div className="grid h-full w-full place-content-center rounded-full bg-white ">
         <Image
           // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
           src={iconLizard}

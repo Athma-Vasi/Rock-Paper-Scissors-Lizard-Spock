@@ -11,33 +11,34 @@ import Spock from "../spock";
 
 function Board() {
   return (
-    <div className="grid h-full w-full grid-cols-[32] grid-rows-[32] outline-dotted">
+    <div className="grid h-full w-full grid-cols-[29] grid-rows-[26] outline-dotted">
       {/* rock */}
-      <div className="col-start-[19] col-end-[29] row-start-[22] row-end-[32]">
+      <div className="col-start-[16] col-end-[25] row-start-[18] row-end-[26]">
         <Rock />
       </div>
 
       {/* paper */}
-      <div className="col-start-[22] col-end-[32] row-start-[10] row-end-[19]">
+      <div className="col-start-[21] col-end-[29] row-start-[9] row-end-[16]">
         <Paper />
       </div>
 
       {/* scissors */}
-      <div className="col-start-[12] col-end-[21] row-start-1 row-end-[10]">
+      <div className="col-start-[11] col-end-[18] row-start-1 row-end-[8]">
         <Scissors />
       </div>
 
       {/* spock */}
-      <div className="col-start-1 col-end-[11] row-start-[10] row-end-[19]">
+      <div className="col-start-1 col-end-[9] row-start-[9] row-end-[16]">
         <Spock />
       </div>
 
       {/* lizard */}
-      <div className="col-start-5 col-end-[14] row-start-[22] row-end-[32]">
+      <div className="col-start-6 col-end-[13] row-start-[18] row-end-[26]">
         <Lizard />
       </div>
     </div>
   );
 }
-
+// 6 across white 2 across colour
+//w:29, h:26
 export default Board;
