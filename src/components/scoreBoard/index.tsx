@@ -1,6 +1,11 @@
 import React from "react";
+import type { State } from "../../types";
 
-function ScoreBoard() {
+type ScoreBoardProps = {
+  state: State;
+};
+
+function ScoreBoard({ state }: ScoreBoardProps) {
   return (
     <div className="grid w-full grid-cols-3 grid-rows-1 p-6 outline-dashed">
       {/* title */}
@@ -15,7 +20,7 @@ function ScoreBoard() {
       {/* scoreBoard */}
       <div className="col-span-1 flex flex-col items-center justify-center outline-dotted">
         <h2>SCORE</h2>
-        <h3 className="text-3xl">12</h3>
+        <h3 className="text-3xl">7</h3>
       </div>
     </div>
   );

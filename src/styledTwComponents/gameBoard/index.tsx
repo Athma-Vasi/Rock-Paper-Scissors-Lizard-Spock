@@ -1,20 +1,24 @@
-import React from "react";
-import Lizard from "../lizard";
-import Paper from "../paper";
-import Rock from "../rock";
-import Scissors from "../scissors";
-import Spock from "../spock";
+import tw from "tailwind-styled-components";
+import type { State, WindowSize } from "../../types";
 
-// type BoardProps = {
-//   state: any;
-// };
+type GameBoardProps = {
+  state: State;
+  windowSize: WindowSize;
+};
 
-function Board() {
-  return <div className="grid h-full w-full outline-dotted"></div>;
-}
-// 6 across white 2 across colour
-//w:29, h:26
-export default Board;
+const GameBoard = tw.div<GameBoardProps>`
+  h-full
+  w-full
+
+  grid
+  grid-cols-[29]
+  grid-rows-[26]
+  p-6
+
+  outline-dotted
+`;
+
+export { GameBoard };
 
 /**
   <div className="grid h-full w-full grid-cols-[29] grid-rows-[26] outline-dotted">

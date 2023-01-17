@@ -1,21 +1,24 @@
 import tw from "tailwind-styled-components";
+import type { State } from "../../types";
 
 type MainWrapperProps = {
-  state: any;
+  state: State;
 };
 
 const MainWrapper = tw.div<MainWrapperProps>`
   grid
-  h-screen
-  w-full
   grid-cols-1
   grid-rows-[9]
+
+  h-screen
+  w-full
+  p-6
+
   bg-gradient-to-b
   from-radialGradientFrom
   to-radialGradientTo
-  p-6
   text-white
-  outline-dotted
+  
 
 
 

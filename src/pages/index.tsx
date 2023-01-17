@@ -1,35 +1,47 @@
 import { type NextPage } from "next";
-import Board from "./components/board";
-import Rules from "./components/rules";
-import ScoreBoard from "./components/scoreBoard";
-import { MainWrapper } from "./styledTwComponents/mainWrapper";
+import type { WindowSize } from "../types";
+
+import { useReducer } from "react";
+import { useWindowSize } from "../hooks/useWindowSize";
+import { reducer, initialState } from "../state";
+
+import Rules from "../components/rules";
+import ScoreBoard from "../components/scoreBoard";
+import { Rock } from "../components/rock";
+
+import { MainWrapper } from "../styledTwComponents/mainWrapper";
+import { GameBoard } from "../styledTwComponents/gameBoard";
+import { Scissors } from "../components/scissors";
+import { Paper } from "../components/paper";
+import { Lizard } from "../components/lizard";
+import { Spock } from "../components/spock";
 
 const Home: NextPage = () => {
-  const initialState = {
-    appState: {
-      score: 0,
-      round: 0,
-      playerChoice: null,
-      computerChoice: null,
-      winner: null,
-      isGameStarted: false,
-      isGameFinished: false,
-      wasRulesClicked: false,
-    },
-    designState: {
-      window: { width: 0, height: 0 },
-    },
-  };
+  const [state, dispatch] = useReducer(reducer, initialState);
+
+  const windowDims = useWindowSize();
+  const windowSize = (function (windowDims: WindowSize) {
+    const { width = 0, height = 0 } = windowDims;
+
+    return {
+      width,
+      height,
+    };
+  })(windowDims);
 
   return (
-    <MainWrapper state={}>
+    <MainWrapper state={state}>
       <div className="rows-span-1 col-span-1">
-        <ScoreBoard />
+        <ScoreBoard state={state} />
       </div>
 
-      <div className="h-[448.3px] w-[500px] p-6 outline-dashed">
-        <Board />
-      </div>
+      <GameBoard state={state} windowSize={windowSize}>
+        <Rock state={state} windowSize={windowSize} />
+        <Paper state={state} windowSize={windowSize} />
+        <Scissors state={state} windowSize={windowSize} />
+        <Lizard state={state} windowSize={windowSize} />
+        <Spock state={state} windowSize={windowSize} />
+      </GameBoard>
 
       <div className="">
         <Rules />
