@@ -2,11 +2,28 @@ import { type NextPage } from "next";
 import Board from "./components/board";
 import Rules from "./components/rules";
 import ScoreBoard from "./components/scoreBoard";
+import { MainWrapper } from "./styledTwComponents/mainWrapper";
 
 const Home: NextPage = () => {
+  const initialState = {
+    appState: {
+      score: 0,
+      round: 0,
+      playerChoice: null,
+      computerChoice: null,
+      winner: null,
+      isGameStarted: false,
+      isGameFinished: false,
+      wasRulesClicked: false,
+    },
+    designState: {
+      window: { width: 0, height: 0 },
+    },
+  };
+
   return (
-    <div className="grid h-screen w-full bg-gradient-to-b from-radialGradientFrom to-radialGradientTo p-6 text-white outline-dotted">
-      <div className="h-[10vh]">
+    <MainWrapper state={}>
+      <div className="rows-span-1 col-span-1">
         <ScoreBoard />
       </div>
 
@@ -17,7 +34,7 @@ const Home: NextPage = () => {
       <div className="">
         <Rules />
       </div>
-    </div>
+    </MainWrapper>
   );
 };
 //w:29, h:26

@@ -10,35 +10,38 @@ import Spock from "../spock";
 // };
 
 function Board() {
-  return (
-    <div className="grid h-full w-full grid-cols-[29] grid-rows-[26] outline-dotted">
-      {/* rock */}
-      <div className="col-start-[16] col-end-[25] row-start-[18] row-end-[26]">
-        <Rock />
-      </div>
-
-      {/* paper */}
-      <div className="col-start-[21] col-end-[29] row-start-[9] row-end-[16]">
-        <Paper />
-      </div>
-
-      {/* scissors */}
-      <div className="col-start-[11] col-end-[18] row-start-1 row-end-[8]">
-        <Scissors />
-      </div>
-
-      {/* spock */}
-      <div className="col-start-1 col-end-[9] row-start-[9] row-end-[16]">
-        <Spock />
-      </div>
-
-      {/* lizard */}
-      <div className="col-start-6 col-end-[13] row-start-[18] row-end-[26]">
-        <Lizard />
-      </div>
-    </div>
-  );
+  return <div className="grid h-full w-full outline-dotted"></div>;
 }
 // 6 across white 2 across colour
 //w:29, h:26
 export default Board;
+
+/**
+  <div className="grid h-full w-full grid-cols-[29] grid-rows-[26] outline-dotted">
+      
+      <div className="col-start-[16] col-end-[25] row-start-[18] row-end-[26]">
+        <Rock />
+      </div>
+
+      
+      <div className="col-start-[21] col-end-[29] row-start-[9] row-end-[16]">
+        <Paper />
+      </div>
+
+      
+      <div className="col-start-[11] col-end-[18] row-start-1 row-end-[8]">
+        <Scissors />
+      </div>
+
+      
+      <div className="col-start-1 col-end-[9] row-start-[9] row-end-[16]">
+        <Spock />
+      </div>
+
+      
+      <div className="col-start-6 col-end-[13] row-start-[18] row-end-[26]">
+        <Lizard />
+      </div>
+    </div>
+
+ */
