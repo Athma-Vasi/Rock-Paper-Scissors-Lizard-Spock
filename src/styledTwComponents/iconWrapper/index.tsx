@@ -3,7 +3,7 @@ import type { State, WindowSize } from "../../types";
 
 type IconWrapperProps = {
   state: State;
-  windowSize: WindowSize;
+  windowsize: WindowSize;
   iconType: "rock" | "paper" | "scissors" | "lizard" | "spock";
 };
 
@@ -22,15 +22,15 @@ const IconWrapper = tw.div<IconWrapperProps>`
     iconType === "rock"
       ? "from-rockGradientFrom to-rockGradientTo col-start-[16] col-end-[25] row-start-[18] row-end-[26]"
       : iconType === "paper"
-      ? "from-paperGradientFrom to-paperGradientTo col-start-[21] col-end-[29] row-start-[9] row-end-[16]"
+      ? "from-paperGradientFrom to-paperGradientTo col-start-[20] col-end-[28] row-start-[7] row-end-[14]"
       : iconType === "scissors"
       ? "from-scissorsGradientFrom to-scissorsGradientTo col-start-[11] col-end-[18] row-start-1 row-end-[8]"
       : iconType === "lizard"
       ? "from-lizardGradientFrom to-lizardGradientTo col-start-6 col-end-[13] row-start-[18] row-end-[26]"
-      : "from-spockGradientFrom to-spockGradientTo col-start-1 col-end-[9] row-start-[9] row-end-[16]"}  
+      : "from-spockGradientFrom to-spockGradientTo col-start-2 col-end-[10] row-start-[7] row-end-[14]"}  
   
 
-  ${({ windowSize: { width = 0 } }) =>
+  ${({ windowsize: { width = 0 } }) =>
     width < 400
       ? "h-[75px] w-[75px] p-2"
       : width < 640

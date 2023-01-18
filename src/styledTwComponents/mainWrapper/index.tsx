@@ -3,7 +3,7 @@ import type { State, WindowSize } from "../../types";
 
 type MainWrapperProps = {
   state: State;
-  windowSize: WindowSize;
+  windowsize: WindowSize;
 };
 
 const MainWrapper = tw.div<MainWrapperProps>`

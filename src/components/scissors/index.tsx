@@ -9,10 +9,10 @@ type ScissorsProps = {
   state: State;
   action: Action;
   dispatch: React.Dispatch<Dispatch>;
-  windowSize: WindowSize;
+  windowsize: WindowSize;
 };
 
-function Scissors({ state, action, dispatch, windowSize }: ScissorsProps) {
+function Scissors({ state, action, dispatch, windowsize }: ScissorsProps) {
   function handleScissorsIconClick() {
     // event: React.MouseEvent<HTMLDivElement, MouseEvent>
     state.appState.playerChoice = "scissors";
@@ -25,7 +25,7 @@ function Scissors({ state, action, dispatch, windowSize }: ScissorsProps) {
   return (
     <IconWrapper
       state={state}
-      windowSize={windowSize}
+      windowsize={windowsize}
       iconType="scissors"
       onClick={handleScissorsIconClick}
     >
@@ -36,7 +36,7 @@ function Scissors({ state, action, dispatch, windowSize }: ScissorsProps) {
           // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
           src={iconScissors}
           alt="icon of a hand closed first representing Scissors"
-          windowSize={windowSize}
+          windowsize={windowsize}
         />
       </div>
     </IconWrapper>

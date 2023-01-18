@@ -7,7 +7,7 @@ import { AiOutlineClose } from "react-icons/ai";
 
 type RulesProps = {
   state: State;
-  windowSize: WindowSize;
+  windowsize: WindowSize;
   action: Action;
   dispatch: React.Dispatch<Dispatch>;
 };
@@ -16,7 +16,7 @@ function Rules({
   state,
   action,
   dispatch,
-  windowSize: { width = 0 },
+  windowsize: { width = 0 },
 }: RulesProps) {
   function handleRulesClick() {
     // event: React.MouseEvent<HTMLHeadingElement, MouseEvent>

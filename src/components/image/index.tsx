@@ -4,12 +4,12 @@ import Image from "next/image";
 import React from "react";
 
 type MyImageProps = {
-  windowSize: WindowSize;
+  windowsize: WindowSize;
   src: string;
   alt: string;
 };
 
-function MyImage({ windowSize: { width = 0 }, src, alt }: MyImageProps) {
+function MyImage({ windowsize: { width = 0 }, src, alt }: MyImageProps) {
   return (
     <Image
       src={src}

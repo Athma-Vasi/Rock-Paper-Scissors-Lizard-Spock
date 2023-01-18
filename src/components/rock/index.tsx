@@ -4,20 +4,26 @@ import React from "react";
 import iconRock from "../../assets/images/icon-rock.svg";
 import { IconWrapper } from "../../styledTwComponents/iconWrapper";
 import { MyImage } from "../image";
+import { generateComputerChoice } from "../utils";
 
 type RockProps = {
   state: State;
   action: Action;
   dispatch: React.Dispatch<Dispatch>;
-  windowSize: WindowSize;
+  windowsize: WindowSize;
 };
 
-function Rock({ state, action, dispatch, windowSize }: RockProps) {
+function Rock({ state, action, dispatch, windowsize }: RockProps) {
   function handleRockIconClick() {
     // event: React.MouseEvent<HTMLDivElement, MouseEvent>
+    const computerChoice = generateComputerChoice();
+
+    state.appState.computerChoice = computerChoice;
     state.appState.playerChoice = "rock";
+    state.appState.isGameStarted = true;
+
     dispatch({
-      type: action.appAction.setPlayerChoice,
+      type: action.appAction.setAll,
       payload: state,
     });
   }
@@ -25,7 +31,7 @@ function Rock({ state, action, dispatch, windowSize }: RockProps) {
   return (
     <IconWrapper
       state={state}
-      windowSize={windowSize}
+      windowsize={windowsize}
       iconType="rock"
       onClick={handleRockIconClick}
     >
@@ -33,7 +39,7 @@ function Rock({ state, action, dispatch, windowSize }: RockProps) {
         className={`grid h-full w-full place-content-center rounded-full bg-white shadow-inner shadow-slate-500 active:shadow-slate-300`}
       >
         <MyImage
-          windowSize={windowSize}
+          windowsize={windowsize}
           // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
           src={iconRock}
           alt="icon of a hand closed first representing rock"

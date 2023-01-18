@@ -9,10 +9,10 @@ type SpockProps = {
   state: State;
   action: Action;
   dispatch: React.Dispatch<Dispatch>;
-  windowSize: WindowSize;
+  windowsize: WindowSize;
 };
 
-function Spock({ state, action, dispatch, windowSize }: SpockProps) {
+function Spock({ state, action, dispatch, windowsize }: SpockProps) {
   function handleSpockIconClick() {
     // event: React.MouseEvent<HTMLDivElement, MouseEvent>
     state.appState.playerChoice = "spock";
@@ -25,7 +25,7 @@ function Spock({ state, action, dispatch, windowSize }: SpockProps) {
   return (
     <IconWrapper
       state={state}
-      windowSize={windowSize}
+      windowsize={windowsize}
       iconType="spock"
       onClick={handleSpockIconClick}
     >
@@ -35,7 +35,7 @@ function Spock({ state, action, dispatch, windowSize }: SpockProps) {
         <MyImage // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
           src={iconSpock}
           alt="icon of a hand closed first representing Spock"
-          windowSize={windowSize}
+          windowsize={windowsize}
         />
       </div>
     </IconWrapper>

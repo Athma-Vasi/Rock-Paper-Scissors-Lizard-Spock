@@ -3,10 +3,10 @@ import React from "react";
 import { BsPentagon } from "react-icons/bs";
 
 type PentagonProps = {
-  windowSize: WindowSize;
+  windowsize: WindowSize;
 };
 
-function Pentagon({ windowSize: { width = 0 } }: PentagonProps) {
+function Pentagon({ windowsize: { width = 0 } }: PentagonProps) {
   const scaleAndPosition =
     width < 400
       ? "top-[49%] left-[48.5%] scale-x-[12] scale-y-[11.5]"

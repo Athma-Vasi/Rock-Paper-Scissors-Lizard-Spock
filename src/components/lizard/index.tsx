@@ -9,10 +9,10 @@ type LizardProps = {
   state: State;
   action: Action;
   dispatch: React.Dispatch<Dispatch>;
-  windowSize: WindowSize;
+  windowsize: WindowSize;
 };
 
-function Lizard({ state, action, dispatch, windowSize }: LizardProps) {
+function Lizard({ state, action, dispatch, windowsize }: LizardProps) {
   function handleLizardIconClick() {
     // event: React.MouseEvent<HTMLDivElement, MouseEvent>
     state.appState.playerChoice = "lizard";
@@ -25,7 +25,7 @@ function Lizard({ state, action, dispatch, windowSize }: LizardProps) {
   return (
     <IconWrapper
       state={state}
-      windowSize={windowSize}
+      windowsize={windowsize}
       iconType="lizard"
       onClick={handleLizardIconClick}
     >
@@ -36,7 +36,7 @@ function Lizard({ state, action, dispatch, windowSize }: LizardProps) {
           // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
           src={iconLizard}
           alt="icon of a hand closed first representing Lizard"
-          windowSize={windowSize}
+          windowsize={windowsize}
         />
       </div>
     </IconWrapper>

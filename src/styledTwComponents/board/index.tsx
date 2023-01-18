@@ -1,12 +1,12 @@
 import tw from "tailwind-styled-components";
 import type { State, WindowSize } from "../../types";
 
-type GameBoardProps = {
+type BoardProps = {
   state: State;
-  windowSize: WindowSize;
+  windowsize: WindowSize;
 };
 
-const GameBoard = tw.div<GameBoardProps>`
+const Board = tw.div<BoardProps>`
   h-full
   w-full
   relative
@@ -22,7 +22,7 @@ const GameBoard = tw.div<GameBoardProps>`
   outline-dotted
 `;
 
-export { GameBoard };
+export { Board };
 
 /**
   <div className="grid h-full w-full grid-cols-[29] grid-rows-[26] outline-dotted">

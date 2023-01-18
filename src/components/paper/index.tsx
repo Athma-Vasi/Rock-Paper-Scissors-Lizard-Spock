@@ -9,10 +9,10 @@ type PaperProps = {
   state: State;
   action: Action;
   dispatch: React.Dispatch<Dispatch>;
-  windowSize: WindowSize;
+  windowsize: WindowSize;
 };
 
-function Paper({ state, action, dispatch, windowSize }: PaperProps) {
+function Paper({ state, action, dispatch, windowsize }: PaperProps) {
   function handlePaperIconClick() {
     // event: React.MouseEvent<HTMLDivElement, MouseEvent>
     state.appState.playerChoice = "paper";
@@ -25,7 +25,7 @@ function Paper({ state, action, dispatch, windowSize }: PaperProps) {
   return (
     <IconWrapper
       state={state}
-      windowSize={windowSize}
+      windowsize={windowsize}
       iconType="paper"
       onClick={handlePaperIconClick}
     >
@@ -36,7 +36,7 @@ function Paper({ state, action, dispatch, windowSize }: PaperProps) {
           // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
           src={iconPaper}
           alt="icon of a hand closed first representing Paper"
-          windowSize={windowSize}
+          windowsize={windowsize}
         />
       </div>
     </IconWrapper>

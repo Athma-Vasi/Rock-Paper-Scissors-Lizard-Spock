@@ -6,7 +6,7 @@ import { useWindowSize } from "../hooks/useWindowSize";
 import { reducer, initialState, action } from "../state";
 
 import { MainWrapper } from "../styledTwComponents/mainWrapper";
-import { GameBoard } from "../styledTwComponents/gameBoard";
+import { Board } from "../styledTwComponents/board";
 
 import ScoreBoard from "../components/scoreBoard";
 import { Rock } from "../components/rock";
@@ -21,7 +21,7 @@ const Home: NextPage = () => {
   const [state, dispatch] = useReducer(reducer, initialState);
 
   const windowDims = useWindowSize();
-  const windowSize = (function (windowDims: WindowSize) {
+  const windowsize = (function (windowDims: WindowSize) {
     const { width = 0, height = 0 } = windowDims;
 
     return {
@@ -29,53 +29,57 @@ const Home: NextPage = () => {
       height,
     };
   })(windowDims);
-  console.log("windowSize: ", windowSize);
+  console.log("windowsize: ", windowsize);
 
   return (
-    <MainWrapper state={state} windowSize={windowSize}>
+    <MainWrapper state={state} windowsize={windowsize}>
       <div className="rows-span-1 col-span-1">
         <ScoreBoard state={state} />
       </div>
       {/*  */}
-      <GameBoard state={state} windowSize={windowSize}>
-        <Pentagon windowSize={windowSize} />
-        <Rock
-          state={state}
-          action={action}
-          dispatch={dispatch}
-          windowSize={windowSize}
-        />
-        <Paper
-          state={state}
-          action={action}
-          dispatch={dispatch}
-          windowSize={windowSize}
-        />
-        <Scissors
-          state={state}
-          action={action}
-          dispatch={dispatch}
-          windowSize={windowSize}
-        />
-        <Lizard
-          state={state}
-          action={action}
-          dispatch={dispatch}
-          windowSize={windowSize}
-        />
-        <Spock
-          state={state}
-          action={action}
-          dispatch={dispatch}
-          windowSize={windowSize}
-        />
-      </GameBoard>
+      {state.appState.isGameStarted ? (
+        <div></div>
+      ) : (
+        <Board state={state} windowsize={windowsize}>
+          <Pentagon windowsize={windowsize} />
+          <Rock
+            state={state}
+            action={action}
+            dispatch={dispatch}
+            windowsize={windowsize}
+          />
+          <Paper
+            state={state}
+            action={action}
+            dispatch={dispatch}
+            windowsize={windowsize}
+          />
+          <Scissors
+            state={state}
+            action={action}
+            dispatch={dispatch}
+            windowsize={windowsize}
+          />
+          <Lizard
+            state={state}
+            action={action}
+            dispatch={dispatch}
+            windowsize={windowsize}
+          />
+          <Spock
+            state={state}
+            action={action}
+            dispatch={dispatch}
+            windowsize={windowsize}
+          />
+        </Board>
+      )}
       {/*  */}
       <Rules
         state={state}
         action={action}
         dispatch={dispatch}
-        windowSize={windowSize}
+        windowsize={windowsize}
       />
     </MainWrapper>
   );
