@@ -1,9 +1,9 @@
 type State = {
   appState: {
     score: number;
-    playerChoice: null | "rock" | "paper" | "scissors" | "lizard" | "spock";
-    computerChoice: string | null;
-    winner: string | null;
+    playerChoice: Choice | null;
+    computerChoice: Choice | null;
+    winner: Winner | null;
     isGameStarted: boolean;
     wasRulesClicked: boolean;
   };

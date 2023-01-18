@@ -20,7 +20,7 @@ function ScoreBoard({ state }: ScoreBoardProps) {
       {/* scoreBoard */}
       <div className="col-span-1 flex flex-col items-center justify-center rounded-lg bg-white text-darkText outline-dotted">
         <h4 className="tracking-widest">SCORE</h4>
-        <h3 className="text-4xl font-bold">7</h3>
+        <h3 className="text-4xl font-bold">{state.appState.score}</h3>
       </div>
     </div>
   );
