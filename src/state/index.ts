@@ -11,9 +11,6 @@ const initialState: State = {
     isGameFinished: false,
     wasRulesClicked: false,
   },
-  designState: {
-    windowSize: { width: 0, height: 0 },
-  },
 };
 
 const action: Action = {
@@ -27,9 +24,6 @@ const action: Action = {
     setIsGameFinished: "setIsGameFinished",
     setWasRulesClicked: "setWasRulesClicked",
     setAll: "setAll",
-  },
-  designAction: {
-    setWindowSize: "setWindowSize",
   },
 };
 
@@ -46,9 +40,6 @@ function reducer(state: State, dispatch: Dispatch) {
       isGameStarted,
       isGameFinished,
       wasRulesClicked,
-    },
-    designState: {
-      windowSize: { width, height },
     },
   } = dispatch.payload;
 
@@ -91,12 +82,6 @@ function reducer(state: State, dispatch: Dispatch) {
       return clone;
     }
 
-    // design state
-    case action.designAction.setWindowSize: {
-      clone.designState.windowSize.width = width;
-      clone.designState.windowSize.height = height;
-      return clone;
-    }
     default:
       return clone;
   }
