@@ -25,7 +25,7 @@ function Rules({
     </div>
   ) : (
     <div className="col-span-1 row-span-1 grid h-full w-full place-content-center p-4 outline-dashed">
-      <h2 className="w-full cursor-pointer rounded-lg border-2 border-white py-2 px-8 text-2xl tracking-widest">
+      <h2 className="w-full cursor-pointer rounded-lg border-2 border-headerOutline py-2 px-8 text-2xl tracking-widest">
         RULES
       </h2>
     </div>

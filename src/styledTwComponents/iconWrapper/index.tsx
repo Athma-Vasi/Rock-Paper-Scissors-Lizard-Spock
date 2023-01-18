@@ -9,8 +9,16 @@ type IconWrapperProps = {
 
 const IconWrapper = tw.div<IconWrapperProps>`
   rounded-full
-  z-40
-  cursor-pointer 
+  z-30
+  cursor-pointer
+  shadow-md shadow-slate-900
+
+  
+
+  active:shadow-none
+  active:translate-y-[2px]
+  active:duration-150
+
 
   bg-gradient-to-b
   ${({ iconType }) =>

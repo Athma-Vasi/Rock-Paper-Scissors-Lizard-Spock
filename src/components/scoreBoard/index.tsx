@@ -7,9 +7,9 @@ type ScoreBoardProps = {
 
 function ScoreBoard({ state }: ScoreBoardProps) {
   return (
-    <div className="grid w-full grid-cols-3 grid-rows-1 p-6 outline-dashed">
+    <div className="grid w-full grid-cols-3 grid-rows-1 rounded-lg border-2 border-headerOutline p-6">
       {/* title */}
-      <div className="col-span-2 flex flex-col items-start justify-start outline-dotted">
+      <div className="col-span-2 flex flex-col items-start justify-start">
         <h1 className="-m-1">ROCK</h1>
         <h1 className="-m-1">PAPER</h1>
         <h1 className="-m-1">SCISSORS</h1>
@@ -18,9 +18,9 @@ function ScoreBoard({ state }: ScoreBoardProps) {
       </div>
 
       {/* scoreBoard */}
-      <div className="col-span-1 flex flex-col items-center justify-center outline-dotted">
-        <h2>SCORE</h2>
-        <h3 className="text-3xl">7</h3>
+      <div className="col-span-1 flex flex-col items-center justify-center rounded-lg bg-white text-darkText outline-dotted">
+        <h4 className="tracking-widest">SCORE</h4>
+        <h3 className="text-4xl font-bold">7</h3>
       </div>
     </div>
   );

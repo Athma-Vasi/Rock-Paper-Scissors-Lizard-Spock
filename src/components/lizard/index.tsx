@@ -14,7 +14,7 @@ function Lizard({ state, windowSize }: LizardProps) {
   return (
     <IconWrapper state={state} windowSize={windowSize} iconType="lizard">
       <div
-        className={`grid h-full w-full place-content-center rounded-full bg-white `}
+        className={`grid h-full w-full place-content-center rounded-full bg-white shadow-inner shadow-slate-400`}
       >
         <MyImage
           // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment

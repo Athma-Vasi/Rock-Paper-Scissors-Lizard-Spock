@@ -14,7 +14,7 @@ function Rock({ state, windowSize }: RockProps) {
   return (
     <IconWrapper state={state} windowSize={windowSize} iconType="rock">
       <div
-        className={`grid h-full w-full place-content-center rounded-full bg-white `}
+        className={`grid h-full w-full place-content-center rounded-full bg-white shadow-inner shadow-slate-400`}
       >
         <MyImage
           windowSize={windowSize}
