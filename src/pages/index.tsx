@@ -37,7 +37,117 @@ const Home: NextPage = () => {
       </div>
       {/*  */}
       {state.appState.isGameStarted ? (
-        <div className=""></div>
+        <div className="row-start-2 row-end-[8] flex flex-col items-center justify-center">
+          {/* player choice icon */}
+          <div className="flex flex-row items-center justify-center">
+            <div className="flex flex-col items-center justify-center">
+              {state.appState.playerChoice === "rock" ? (
+                <Rock
+                  state={state}
+                  windowsize={windowsize}
+                  action={action}
+                  dispatch={dispatch}
+                  coloursMap={coloursMap}
+                />
+              ) : state.appState.playerChoice === "paper" ? (
+                <Paper
+                  state={state}
+                  windowsize={windowsize}
+                  action={action}
+                  dispatch={dispatch}
+                  coloursMap={coloursMap}
+                />
+              ) : state.appState.playerChoice === "scissors" ? (
+                <Scissors
+                  state={state}
+                  windowsize={windowsize}
+                  action={action}
+                  dispatch={dispatch}
+                  coloursMap={coloursMap}
+                />
+              ) : state.appState.playerChoice === "lizard" ? (
+                <Lizard
+                  state={state}
+                  windowsize={windowsize}
+                  action={action}
+                  dispatch={dispatch}
+                  coloursMap={coloursMap}
+                />
+              ) : (
+                <Spock
+                  state={state}
+                  windowsize={windowsize}
+                  action={action}
+                  dispatch={dispatch}
+                  coloursMap={coloursMap}
+                />
+              )}
+              <p>YOU PICKED</p>
+            </div>
+            {/* computer choice icon */}
+            <div className="flex flex-col items-center justify-center">
+              {state.appState.computerChoice === "rock" ? (
+                <Rock
+                  state={state}
+                  windowsize={windowsize}
+                  coloursMap={coloursMap}
+                  action={action}
+                  dispatch={dispatch}
+                />
+              ) : state.appState.computerChoice === "paper" ? (
+                <Paper
+                  state={state}
+                  windowsize={windowsize}
+                  coloursMap={coloursMap}
+                  action={action}
+                  dispatch={dispatch}
+                />
+              ) : state.appState.computerChoice === "scissors" ? (
+                <Scissors
+                  state={state}
+                  windowsize={windowsize}
+                  coloursMap={coloursMap}
+                  action={action}
+                  dispatch={dispatch}
+                />
+              ) : state.appState.computerChoice === "lizard" ? (
+                <Lizard
+                  state={state}
+                  windowsize={windowsize}
+                  coloursMap={coloursMap}
+                  action={action}
+                  dispatch={dispatch}
+                />
+              ) : (
+                <Spock
+                  state={state}
+                  windowsize={windowsize}
+                  coloursMap={coloursMap}
+                  action={action}
+                  dispatch={dispatch}
+                />
+              )}
+              <p>HOUSE PICKED</p>
+            </div>
+          </div>
+          {/* winner and play again button */}
+          <div className="flex flex-col items-center justify-center">
+            <p
+              className={`${
+                state.designState.winnerColour ?? ""
+              } text-2xl font-bold`}
+            >
+              {state.appState.winner === "player"
+                ? "YOU WIN"
+                : state.appState.winner === "computer"
+                ? "HOUSE WINS"
+                : "DRAW"}
+            </p>
+            <button className="cursor-pointer rounded-lg border-2 border-headerOutline py-2 px-8 text-2xl tracking-widest">
+              PLAY AGAIN
+            </button>
+          </div>
+        </div>
       ) : (
         <Board state={state} windowsize={windowsize}>
           <Pentagon windowsize={windowsize} />

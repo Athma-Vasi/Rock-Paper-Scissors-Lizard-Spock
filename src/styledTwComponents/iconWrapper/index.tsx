@@ -4,7 +4,7 @@ import type { State, WindowSize } from "../../types";
 type IconWrapperProps = {
   state: State;
   windowsize: WindowSize;
-  iconType: "rock" | "paper" | "scissors" | "lizard" | "spock";
+  icontype: "rock" | "paper" | "scissors" | "lizard" | "spock";
 };
 
 const IconWrapper = tw.div<IconWrapperProps>`
@@ -23,14 +23,14 @@ const IconWrapper = tw.div<IconWrapperProps>`
   
 
   bg-gradient-to-b
-  ${({ iconType }) =>
-    iconType === "rock"
+  ${({ icontype }) =>
+    icontype === "rock"
       ? "from-rockGradientFrom to-rockGradientTo col-start-[16] col-end-[25] row-start-[18] row-end-[26]"
-      : iconType === "paper"
+      : icontype === "paper"
       ? "from-paperGradientFrom to-paperGradientTo col-start-[20] col-end-[28] row-start-[7] row-end-[14]"
-      : iconType === "scissors"
+      : icontype === "scissors"
       ? "from-scissorsGradientFrom to-scissorsGradientTo col-start-[11] col-end-[18] row-start-1 row-end-[8]"
-      : iconType === "lizard"
+      : icontype === "lizard"
       ? "from-lizardGradientFrom to-lizardGradientTo col-start-6 col-end-[13] row-start-[18] row-end-[26]"
       : "from-spockGradientFrom to-spockGradientTo col-start-2 col-end-[10] row-start-[7] row-end-[14]"}  
   

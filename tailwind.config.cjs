@@ -25,6 +25,13 @@ module.exports = {
         //background
         radialGradientFrom: "hsl(214, 47%, 23%)",
         radialGradientTo: "hsl(237, 49%, 15%)",
+
+        //winners text colours
+        scissorsText: "hsl(39, 89%, 49%)",
+        paperText: "hsl(230, 89%, 62%)",
+        rockText: "hsl(349, 71%, 52%)",
+        lizardText: "hsl(261, 73%, 60%)",
+        spockText: "hsl(189, 59%, 53%)",
       },
       backgroundImage: {
         pentagon: "url('/src/assets/images/bg-pentagon.svg')",

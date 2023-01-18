@@ -22,11 +22,11 @@ const initialState: State = {
 };
 
 const coloursMap: ColoursMap = new Map([
-  ["rock", "hsl(349, 71%, 52%)"],
-  ["paper", "hsl(230, 89%, 62%)"],
-  ["scissors", "hsl(39, 89%, 49%)"],
-  ["lizard", "hsl(261, 73%, 60%)"],
-  ["spock", "hsl(189, 59%, 53%)"],
+  ["rock", "text-rockText"],
+  ["paper", "text-paperText"],
+  ["scissors", "text-scissorsText"],
+  ["lizard", "text-lizardText"],
+  ["spock", "text-spockText"],
 ]);
 
 const action: Action = {

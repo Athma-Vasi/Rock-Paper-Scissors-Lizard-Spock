@@ -50,11 +50,11 @@ type Choice = "rock" | "paper" | "scissors" | "lizard" | "spock";
 type Winner = "player" | "computer" | "draw";
 
 type Colours =
-  | "hsl(349, 71%, 52%)"
-  | "hsl(230, 89%, 62%)"
-  | "hsl(39, 89%, 49%)"
-  | "hsl(261, 73%, 60%)"
-  | "hsl(189, 59%, 53%)";
+  | "text-rockText"
+  | "text-paperText"
+  | "text-scissorsText"
+  | "text-lizardText"
+  | "text-spockText";
 
 type ColoursMap = Map<Choice, Colours>;
 

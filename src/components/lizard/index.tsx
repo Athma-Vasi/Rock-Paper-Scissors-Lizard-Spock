@@ -53,15 +53,19 @@ function Lizard({
     }
   }
 
+  const activeAnimation = state.appState.isGameStarted
+    ? ""
+    : "active:shadow-slate-300";
+
   return (
     <IconWrapper
       state={state}
       windowsize={windowsize}
-      iconType="lizard"
+      icontype="lizard"
       onClick={handleLizardIconClick}
     >
       <div
-        className={`grid h-full w-full place-content-center rounded-full bg-white shadow-inner shadow-slate-500 active:shadow-slate-300`}
+        className={`grid h-full w-full place-content-center rounded-full bg-white shadow-inner shadow-slate-500 ${activeAnimation}`}
       >
         <MyImage
           // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
