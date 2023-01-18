@@ -10,12 +10,17 @@ type IconWrapperProps = {
 const IconWrapper = tw.div<IconWrapperProps>`
   rounded-full
   z-30
-  cursor-pointer
+  ${({
+    state: {
+      appState: { isGameStarted },
+    },
+  }) =>
+    isGameStarted
+      ? ""
+      : "cursor-pointer active:shadow-none active:translate-y-[2px] active:duration-150"}
   shadow-md shadow-slate-900  
 
-  active:shadow-none
-  active:translate-y-[2px]
-  active:duration-150
+  
 
   bg-gradient-to-b
   ${({ iconType }) =>

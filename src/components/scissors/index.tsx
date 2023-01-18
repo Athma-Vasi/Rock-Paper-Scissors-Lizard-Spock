@@ -1,25 +1,56 @@
-import type { Action, Dispatch, State, WindowSize } from "../../types";
+import type {
+  Action,
+  Colours,
+  ColoursMap,
+  Dispatch,
+  State,
+  WindowSize,
+} from "../../types";
 
 import React from "react";
 import iconScissors from "../../assets/images/icon-scissors.svg";
 import { IconWrapper } from "../../styledTwComponents/iconWrapper";
 import { MyImage } from "../image";
+import { generateComputerChoice, generateWinner } from "../utils";
 
 type ScissorsProps = {
   state: State;
   action: Action;
   dispatch: React.Dispatch<Dispatch>;
   windowsize: WindowSize;
+  coloursMap: ColoursMap;
 };
 
-function Scissors({ state, action, dispatch, windowsize }: ScissorsProps) {
+function Scissors({
+  state,
+  action,
+  dispatch,
+  windowsize,
+  coloursMap,
+}: ScissorsProps) {
   function handleScissorsIconClick() {
     // event: React.MouseEvent<HTMLDivElement, MouseEvent>
-    state.appState.playerChoice = "scissors";
-    dispatch({
-      type: action.appAction.setPlayerChoice,
-      payload: state,
-    });
+    // only allow the player to click on the icon if the game has not started
+    if (!state.appState.isGameStarted) {
+      const computerChoice = generateComputerChoice();
+      const winner = generateWinner("scissors", computerChoice);
+      const winnerColour = coloursMap.get(
+        winner === "player" ? "scissors" : computerChoice
+      ) as Colours;
+
+      state.appState.isGameStarted = true;
+      state.appState.playerChoice = "scissors";
+      state.appState.computerChoice = computerChoice;
+      state.appState.winner = winner;
+      state.appState.score =
+        winner === "player" ? state.appState.score + 1 : state.appState.score;
+      state.designState.winnerColour = winnerColour;
+
+      dispatch({
+        type: action.appAction.setAll,
+        payload: state,
+      });
+    }
   }
 
   return (

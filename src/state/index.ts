@@ -1,29 +1,46 @@
-import type { State, Action, Dispatch } from "../types";
+import type {
+  State,
+  Action,
+  Dispatch,
+  Choice,
+  Colours,
+  ColoursMap,
+} from "../types";
 
 const initialState: State = {
   appState: {
     score: 0,
-    round: 0,
     playerChoice: null,
     computerChoice: null,
     winner: null,
     isGameStarted: false,
-    isGameFinished: false,
     wasRulesClicked: false,
   },
+  designState: {
+    winnerColour: null,
+  },
 };
+
+const coloursMap: ColoursMap = new Map([
+  ["rock", "hsl(349, 71%, 52%)"],
+  ["paper", "hsl(230, 89%, 62%)"],
+  ["scissors", "hsl(39, 89%, 49%)"],
+  ["lizard", "hsl(261, 73%, 60%)"],
+  ["spock", "hsl(189, 59%, 53%)"],
+]);
 
 const action: Action = {
   appAction: {
     setScore: "setScore",
-    setRound: "setRound",
     setPlayerChoice: "setPlayerChoice",
     setComputerChoice: "setComputerChoice",
     setWinner: "setWinner",
     setIsGameStarted: "setIsGameStarted",
-    setIsGameFinished: "setIsGameFinished",
     setWasRulesClicked: "setWasRulesClicked",
     setAll: "setAll",
+  },
+  designAction: {
+    setWinnerColour: "setWinnerColour",
   },
 };
 
@@ -33,24 +50,19 @@ function reducer(state: State, dispatch: Dispatch) {
   const {
     appState: {
       score,
-      round,
       playerChoice,
       computerChoice,
       winner,
       isGameStarted,
-      isGameFinished,
       wasRulesClicked,
     },
+    designState: { winnerColour },
   } = dispatch.payload;
 
   switch (dispatch.type) {
     //appstate
     case action.appAction.setScore: {
       clone.appState.score = score;
-      return clone;
-    }
-    case action.appAction.setRound: {
-      clone.appState.round = round;
       return clone;
     }
     case action.appAction.setPlayerChoice: {
@@ -69,16 +81,18 @@ function reducer(state: State, dispatch: Dispatch) {
       clone.appState.isGameStarted = isGameStarted;
       return clone;
     }
-    case action.appAction.setIsGameFinished: {
-      clone.appState.isGameFinished = isGameFinished;
-      return clone;
-    }
     case action.appAction.setWasRulesClicked: {
       clone.appState.wasRulesClicked = wasRulesClicked;
       return clone;
     }
     case action.appAction.setAll: {
       clone.appState = dispatch.payload.appState;
+      clone.designState = dispatch.payload.designState;
+      return clone;
+    }
+    //designstate
+    case action.designAction.setWinnerColour: {
+      clone.designState.winnerColour = winnerColour;
       return clone;
     }
 
@@ -87,4 +101,4 @@ function reducer(state: State, dispatch: Dispatch) {
   }
 }
 
-export { initialState, reducer, action };
+export { initialState, reducer, action, coloursMap };

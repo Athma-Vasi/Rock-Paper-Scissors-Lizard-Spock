@@ -1,25 +1,56 @@
-import type { Action, Dispatch, State, WindowSize } from "../../types";
+import type {
+  Action,
+  Colours,
+  ColoursMap,
+  Dispatch,
+  State,
+  WindowSize,
+} from "../../types";
 
 import React from "react";
 import iconSpock from "../../assets/images/icon-spock.svg";
 import { IconWrapper } from "../../styledTwComponents/iconWrapper";
 import { MyImage } from "../image";
+import { generateComputerChoice, generateWinner } from "../utils";
 
 type SpockProps = {
   state: State;
   action: Action;
   dispatch: React.Dispatch<Dispatch>;
   windowsize: WindowSize;
+  coloursMap: ColoursMap;
 };
 
-function Spock({ state, action, dispatch, windowsize }: SpockProps) {
+function Spock({
+  state,
+  action,
+  dispatch,
+  windowsize,
+  coloursMap,
+}: SpockProps) {
   function handleSpockIconClick() {
     // event: React.MouseEvent<HTMLDivElement, MouseEvent>
-    state.appState.playerChoice = "spock";
-    dispatch({
-      type: action.appAction.setPlayerChoice,
-      payload: state,
-    });
+    // only allow the player to click on the icon if the game has not started
+    if (!state.appState.isGameStarted) {
+      const computerChoice = generateComputerChoice();
+      const winner = generateWinner("spock", computerChoice);
+      const winnerColour = coloursMap.get(
+        winner === "player" ? "spock" : computerChoice
+      ) as Colours;
+
+      state.appState.isGameStarted = true;
+      state.appState.playerChoice = "spock";
+      state.appState.computerChoice = computerChoice;
+      state.appState.winner = winner;
+      state.appState.score =
+        winner === "player" ? state.appState.score + 1 : state.appState.score;
+      state.designState.winnerColour = winnerColour;
+
+      dispatch({
+        type: action.appAction.setAll,
+        payload: state,
+      });
+    }
   }
 
   return (

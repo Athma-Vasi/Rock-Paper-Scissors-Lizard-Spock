@@ -9,7 +9,9 @@ type PentagonProps = {
 function Pentagon({ windowsize: { width = 0 } }: PentagonProps) {
   const scaleAndPosition =
     width < 400
-      ? "top-[49%] left-[48.5%] scale-x-[12] scale-y-[11.5]"
+      ? "top-[49%] left-[48.5%] scale-x-[12] scale-y-[10]"
+      : width < 480
+      ? "top-[49%] left-[48.5%] scale-x-[14] scale-y-[13.5]"
       : width < 640
       ? "top-[48%] left-[48.5%] scale-x-[17] scale-y-[16]"
       : width < 768

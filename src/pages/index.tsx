@@ -3,7 +3,7 @@ import type { WindowSize } from "../types";
 
 import { useReducer } from "react";
 import { useWindowSize } from "../hooks/useWindowSize";
-import { reducer, initialState, action } from "../state";
+import { reducer, initialState, action, coloursMap } from "../state";
 
 import { MainWrapper } from "../styledTwComponents/mainWrapper";
 import { Board } from "../styledTwComponents/board";
@@ -29,7 +29,6 @@ const Home: NextPage = () => {
       height,
     };
   })(windowDims);
-  console.log("windowsize: ", windowsize);
 
   return (
     <MainWrapper state={state} windowsize={windowsize}>
@@ -38,7 +37,7 @@ const Home: NextPage = () => {
       </div>
       {/*  */}
       {state.appState.isGameStarted ? (
-        <div></div>
+        <div className=""></div>
       ) : (
         <Board state={state} windowsize={windowsize}>
           <Pentagon windowsize={windowsize} />
@@ -47,30 +46,35 @@ const Home: NextPage = () => {
             action={action}
             dispatch={dispatch}
             windowsize={windowsize}
+            coloursMap={coloursMap}
           />
           <Paper
             state={state}
             action={action}
             dispatch={dispatch}
             windowsize={windowsize}
+            coloursMap={coloursMap}
           />
           <Scissors
             state={state}
             action={action}
             dispatch={dispatch}
             windowsize={windowsize}
+            coloursMap={coloursMap}
           />
           <Lizard
             state={state}
             action={action}
             dispatch={dispatch}
             windowsize={windowsize}
+            coloursMap={coloursMap}
           />
           <Spock
             state={state}
             action={action}
             dispatch={dispatch}
             windowsize={windowsize}
+            coloursMap={coloursMap}
           />
         </Board>
       )}

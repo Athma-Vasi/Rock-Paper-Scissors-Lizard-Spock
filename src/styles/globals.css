@@ -11,7 +11,7 @@ body,
   @apply grid 
   h-screen 
   w-screen 
-  place-content-center
+  place-content-center  
   bg-gradient-to-b
   from-radialGradientFrom
   to-radialGradientTo

@@ -1,31 +1,50 @@
-import type { Action, Dispatch, State, WindowSize } from "../../types";
+import type {
+  Action,
+  Colours,
+  ColoursMap,
+  Dispatch,
+  State,
+  WindowSize,
+} from "../../types";
 
 import React from "react";
 import iconRock from "../../assets/images/icon-rock.svg";
 import { IconWrapper } from "../../styledTwComponents/iconWrapper";
 import { MyImage } from "../image";
-import { generateComputerChoice } from "../utils";
+import { generateComputerChoice, generateWinner } from "../utils";
 
 type RockProps = {
   state: State;
   action: Action;
   dispatch: React.Dispatch<Dispatch>;
   windowsize: WindowSize;
+  coloursMap: ColoursMap;
 };
 
-function Rock({ state, action, dispatch, windowsize }: RockProps) {
+function Rock({ state, action, dispatch, windowsize, coloursMap }: RockProps) {
   function handleRockIconClick() {
     // event: React.MouseEvent<HTMLDivElement, MouseEvent>
-    const computerChoice = generateComputerChoice();
+    // only allow the player to click on the icon if the game has not started
+    if (!state.appState.isGameStarted) {
+      const computerChoice = generateComputerChoice();
+      const winner = generateWinner("rock", computerChoice);
+      const winnerColour = coloursMap.get(
+        winner === "player" ? "rock" : computerChoice
+      ) as Colours;
 
-    state.appState.computerChoice = computerChoice;
-    state.appState.playerChoice = "rock";
-    state.appState.isGameStarted = true;
+      state.appState.isGameStarted = true;
+      state.appState.playerChoice = "rock";
+      state.appState.computerChoice = computerChoice;
+      state.appState.winner = winner;
+      state.appState.score =
+        winner === "player" ? state.appState.score + 1 : state.appState.score;
+      state.designState.winnerColour = winnerColour;
 
-    dispatch({
-      type: action.appAction.setAll,
-      payload: state,
-    });
+      dispatch({
+        type: action.appAction.setAll,
+        payload: state,
+      });
+    }
   }
 
   return (

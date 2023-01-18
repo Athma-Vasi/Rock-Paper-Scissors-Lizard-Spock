@@ -11,7 +11,7 @@ const MainWrapper = tw.div<MainWrapperProps>`
   grid-cols-1
   grid-rows-[9]
 
-  h-screen
+  h-full
   w-full  
   p-6 
 
