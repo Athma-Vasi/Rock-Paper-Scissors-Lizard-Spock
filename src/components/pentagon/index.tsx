@@ -9,12 +9,12 @@ type PentagonProps = {
 function Pentagon({ windowSize: { width = 0 } }: PentagonProps) {
   const scaleAndPosition =
     width < 640
-      ? "top-[45%] left-[48.5%] scale-x-[16.5] scale-y-[19.5]"
+      ? "top-[47%] left-[48.5%] scale-x-[17] scale-y-[17]"
       : width < 768
-      ? "top-[45%] left-[48.5%] scale-x-[19] scale-y-[21] "
+      ? "top-[48%] left-[48.5%] scale-x-[19] scale-y-[18] "
       : width < 1024
-      ? "top-[45%] left-[48.5%] scale-x-[21] scale-y-[22]"
-      : "top-[46%] left-[48.5%] scale-x-[25] scale-y-[25]";
+      ? "top-[49%] left-[48.5%] scale-x-[20] scale-y-[18]"
+      : "top-[49%] left-[48.5%] scale-x-[25] scale-y-[20.5]";
 
   return (
     <BsPentagon className={`${scaleAndPosition} absolute z-10 text-pentagon`} />

@@ -11,10 +11,13 @@ const GameBoard = tw.div<GameBoardProps>`
   w-full
   relative
   
+  row-start-2 row-end-[8]
+  col-span-1
+    
   grid
   grid-cols-[29]
   grid-rows-[26]
-  p-6
+  py-36
 
   outline-dotted
 `;

@@ -45,9 +45,7 @@ const Home: NextPage = () => {
         <Spock state={state} windowSize={windowSize} />
       </GameBoard>
 
-      <div className="">
-        <Rules />
-      </div>
+      <Rules state={state} windowSize={windowSize} />
     </MainWrapper>
   );
 };
