@@ -1,7 +1,7 @@
 import { type NextPage } from "next";
 import type { WindowSize } from "../types";
 
-import { useReducer } from "react";
+import React, { useReducer } from "react";
 import { useWindowSize } from "../hooks/useWindowSize";
 import { reducer, initialState, action, coloursMap } from "../state";
 
@@ -29,6 +29,22 @@ const Home: NextPage = () => {
       height,
     };
   })(windowDims);
+
+  function handlePlayAgainClick(
+    event: React.MouseEvent<HTMLButtonElement, MouseEvent>
+  ) {
+    state.appState.playerChoice = null;
+    state.appState.computerChoice = null;
+    state.appState.winner = null;
+    state.appState.isGameStarted = false;
+
+    state.designState.winnerColour = null;
+
+    dispatch({
+      type: action.appAction.setAll,
+      payload: state,
+    });
+  }
 
   return (
     <MainWrapper state={state} windowsize={windowsize}>
@@ -143,7 +159,10 @@ const Home: NextPage = () => {
                 ? "HOUSE WINS"
                 : "DRAW"}
             </p>
-            <button className="cursor-pointer rounded-lg border-2 border-headerOutline py-2 px-8 text-2xl tracking-widest">
+            <button
+              className="cursor-pointer rounded-lg border-2 border-headerOutline py-2 px-8 text-2xl tracking-widest"
+              onClick={handlePlayAgainClick}
+            >
               PLAY AGAIN
             </button>
           </div>
