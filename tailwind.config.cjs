@@ -20,10 +20,14 @@ module.exports = {
         darkText: "hsl(229, 25%, 31%)",
         scoreText: "hsl(229, 64%, 46%)",
         headerOutline: "hsl(217, 16%, 45%)",
+        pentagon: "hsl(214, 47%, 14%)",
 
         //background
         radialGradientFrom: "hsl(214, 47%, 23%)",
         radialGradientTo: "hsl(237, 49%, 15%)",
+      },
+      backgroundImage: {
+        pentagon: "url('/src/assets/images/bg-pentagon.svg')",
       },
     },
     fontFamily: {

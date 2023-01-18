@@ -19,7 +19,7 @@ const MainWrapper = tw.div<MainWrapperProps>`
   to-radialGradientTo
   text-white
   
-
+  z-0
 
 
 `;

@@ -9,7 +9,8 @@ type GameBoardProps = {
 const GameBoard = tw.div<GameBoardProps>`
   h-full
   w-full
-
+  relative
+  
   grid
   grid-cols-[29]
   grid-rows-[26]

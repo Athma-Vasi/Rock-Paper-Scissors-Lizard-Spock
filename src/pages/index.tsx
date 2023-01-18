@@ -5,16 +5,17 @@ import { useReducer } from "react";
 import { useWindowSize } from "../hooks/useWindowSize";
 import { reducer, initialState } from "../state";
 
-import Rules from "../components/rules";
-import ScoreBoard from "../components/scoreBoard";
-import { Rock } from "../components/rock";
-
 import { MainWrapper } from "../styledTwComponents/mainWrapper";
 import { GameBoard } from "../styledTwComponents/gameBoard";
+
+import ScoreBoard from "../components/scoreBoard";
+import { Rock } from "../components/rock";
 import { Scissors } from "../components/scissors";
 import { Paper } from "../components/paper";
 import { Lizard } from "../components/lizard";
 import { Spock } from "../components/spock";
+import Rules from "../components/rules";
+import { Pentagon } from "../components/pentagon";
 
 const Home: NextPage = () => {
   const [state, dispatch] = useReducer(reducer, initialState);
@@ -36,6 +37,7 @@ const Home: NextPage = () => {
       </div>
 
       <GameBoard state={state} windowSize={windowSize}>
+        <Pentagon windowSize={windowSize} />
         <Rock state={state} windowSize={windowSize} />
         <Paper state={state} windowSize={windowSize} />
         <Scissors state={state} windowSize={windowSize} />
