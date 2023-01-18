@@ -1,31 +1,64 @@
-import type { State, WindowSize } from "../../types";
+import type { Action, Dispatch, State, WindowSize } from "../../types";
 
 import React from "react";
 import Image from "next/image";
-import imageRules from "../../assets/images/image-rules.svg";
+import imageRulesBonus from "../../assets/images/image-rules-bonus.svg";
+import { AiOutlineClose } from "react-icons/ai";
 
 type RulesProps = {
   state: State;
   windowSize: WindowSize;
+  action: Action;
+  dispatch: React.Dispatch<Dispatch>;
 };
 
 function Rules({
-  state: {
-    appState: { wasRulesClicked },
-  },
+  state,
+  action,
+  dispatch,
   windowSize: { width = 0 },
 }: RulesProps) {
+  function handleRulesClick() {
+    // event: React.MouseEvent<HTMLHeadingElement, MouseEvent>
+    state.appState.wasRulesClicked = true;
+    dispatch({
+      type: action.appAction.setWasRulesClicked,
+      payload: state,
+    });
+  }
+
+  function handleRulesCloseIconClick() {
+    // event: React.MouseEvent<SVGElement, MouseEvent>
+    state.appState.wasRulesClicked = false;
+    dispatch({
+      type: action.appAction.setWasRulesClicked,
+      payload: state,
+    });
+  }
+
+  const {
+    appState: { wasRulesClicked },
+  } = state;
+
   return wasRulesClicked ? (
-    <div className="">
+    <div className="absolute top-0 left-0 right-0 bottom-0 z-50 flex flex-col items-center justify-around bg-gradient-to-b from-radialGradientFrom to-radialGradientTo p-8">
+      <h2 className="text-2xl tracking-widest text-slate-300">RULES</h2>
       <Image
         // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
-        src={imageRules}
+        src={imageRulesBonus}
         alt="diagram of rules explaining which icon beats the other"
+      />
+      <AiOutlineClose
+        className="cursor-pointer text-4xl text-slate-300"
+        onClick={handleRulesCloseIconClick}
       />
     </div>
   ) : (
-    <div className="col-span-1 row-span-1 grid h-full w-full place-content-center p-4 outline-dashed">
-      <h2 className="w-full cursor-pointer rounded-lg border-2 border-headerOutline py-2 px-8 text-2xl tracking-widest">
+    <div className="col-span-1 row-start-[8] row-end-[9] grid h-full w-full place-content-center p-4 outline-dashed">
+      <h2
+        className="w-full cursor-pointer rounded-lg border-2 border-headerOutline py-2 px-8 text-2xl tracking-widest"
+        onClick={handleRulesClick}
+      >
         RULES
       </h2>
     </div>

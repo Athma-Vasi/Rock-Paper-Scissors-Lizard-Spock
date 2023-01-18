@@ -3,7 +3,7 @@ import type { WindowSize } from "../types";
 
 import { useReducer } from "react";
 import { useWindowSize } from "../hooks/useWindowSize";
-import { reducer, initialState } from "../state";
+import { reducer, initialState, action } from "../state";
 
 import { MainWrapper } from "../styledTwComponents/mainWrapper";
 import { GameBoard } from "../styledTwComponents/gameBoard";
@@ -29,23 +29,54 @@ const Home: NextPage = () => {
       height,
     };
   })(windowDims);
+  console.log("windowSize: ", windowSize);
 
   return (
     <MainWrapper state={state} windowSize={windowSize}>
       <div className="rows-span-1 col-span-1">
         <ScoreBoard state={state} />
       </div>
-
+      {/*  */}
       <GameBoard state={state} windowSize={windowSize}>
         <Pentagon windowSize={windowSize} />
-        <Rock state={state} windowSize={windowSize} />
-        <Paper state={state} windowSize={windowSize} />
-        <Scissors state={state} windowSize={windowSize} />
-        <Lizard state={state} windowSize={windowSize} />
-        <Spock state={state} windowSize={windowSize} />
+        <Rock
+          state={state}
+          action={action}
+          dispatch={dispatch}
+          windowSize={windowSize}
+        />
+        <Paper
+          state={state}
+          action={action}
+          dispatch={dispatch}
+          windowSize={windowSize}
+        />
+        <Scissors
+          state={state}
+          action={action}
+          dispatch={dispatch}
+          windowSize={windowSize}
+        />
+        <Lizard
+          state={state}
+          action={action}
+          dispatch={dispatch}
+          windowSize={windowSize}
+        />
+        <Spock
+          state={state}
+          action={action}
+          dispatch={dispatch}
+          windowSize={windowSize}
+        />
       </GameBoard>
-
-      <Rules state={state} windowSize={windowSize} />
+      {/*  */}
+      <Rules
+        state={state}
+        action={action}
+        dispatch={dispatch}
+        windowSize={windowSize}
+      />
     </MainWrapper>
   );
 };

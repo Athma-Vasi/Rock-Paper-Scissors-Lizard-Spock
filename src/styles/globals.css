@@ -8,9 +8,10 @@ html,
 body,
 #root,
 .app {
-  @apply grid h-screen 
+  @apply grid 
+  h-screen 
   w-screen 
-  place-content-center 
+  place-content-center
   bg-gradient-to-b
   from-radialGradientFrom
   to-radialGradientTo

@@ -1,4 +1,4 @@
-import type { State, WindowSize } from "../../types";
+import type { Action, Dispatch, State, WindowSize } from "../../types";
 
 import React from "react";
 import iconSpock from "../../assets/images/icon-spock.svg";
@@ -7,14 +7,30 @@ import { MyImage } from "../image";
 
 type SpockProps = {
   state: State;
+  action: Action;
+  dispatch: React.Dispatch<Dispatch>;
   windowSize: WindowSize;
 };
 
-function Spock({ state, windowSize }: SpockProps) {
+function Spock({ state, action, dispatch, windowSize }: SpockProps) {
+  function handleSpockIconClick() {
+    // event: React.MouseEvent<HTMLDivElement, MouseEvent>
+    state.appState.playerChoice = "spock";
+    dispatch({
+      type: action.appAction.setPlayerChoice,
+      payload: state,
+    });
+  }
+
   return (
-    <IconWrapper state={state} windowSize={windowSize} iconType="spock">
+    <IconWrapper
+      state={state}
+      windowSize={windowSize}
+      iconType="spock"
+      onClick={handleSpockIconClick}
+    >
       <div
-        className={`grid h-full w-full place-content-center rounded-full bg-white shadow-inner shadow-slate-400`}
+        className={`grid h-full w-full place-content-center rounded-full bg-white shadow-inner shadow-slate-500 active:shadow-slate-300`}
       >
         <MyImage // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
           src={iconSpock}

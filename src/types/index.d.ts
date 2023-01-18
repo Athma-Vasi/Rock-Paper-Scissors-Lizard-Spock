@@ -2,7 +2,7 @@ type State = {
   appState: {
     score: number;
     round: number;
-    playerChoice: string | null;
+    playerChoice: null | "rock" | "paper" | "scissors" | "lizard" | "spock";
     computerChoice: string | null;
     winner: string | null;
     isGameStarted: boolean;

@@ -14,10 +14,16 @@ const MainWrapper = tw.div<MainWrapperProps>`
   h-screen
   w-full  
   p-6 
+
+  bg-gradient-to-b
+  from-radialGradientFrom
+  to-radialGradientTo
   
   z-0
 
   outline-double
+
+  relative
 
 `;
 

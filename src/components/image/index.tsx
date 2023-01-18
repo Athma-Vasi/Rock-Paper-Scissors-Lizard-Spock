@@ -15,15 +15,17 @@ function MyImage({ windowSize: { width = 0 }, src, alt }: MyImageProps) {
       src={src}
       alt={alt}
       className={`${
-        width < 640
+        width < 400
+          ? "scale-75"
+          : width < 640
           ? "scale-90"
           : width < 768
-          ? "scale-x-90"
+          ? "scale-100"
           : width < 1024
-          ? "scale-125"
+          ? "scale-100"
           : width < 1280
-          ? "scale-150"
-          : "scale-150"
+          ? "scale-125"
+          : "scale-125"
       } `}
     />
   );

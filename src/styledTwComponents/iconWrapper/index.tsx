@@ -11,14 +11,11 @@ const IconWrapper = tw.div<IconWrapperProps>`
   rounded-full
   z-30
   cursor-pointer
-  shadow-md shadow-slate-900
-
-  
+  shadow-md shadow-slate-900  
 
   active:shadow-none
   active:translate-y-[2px]
   active:duration-150
-
 
   bg-gradient-to-b
   ${({ iconType }) =>
@@ -34,7 +31,9 @@ const IconWrapper = tw.div<IconWrapperProps>`
   
 
   ${({ windowSize: { width = 0 } }) =>
-    width < 640
+    width < 400
+      ? "h-[75px] w-[75px] p-2"
+      : width < 640
       ? "h-[100px] w-[100px] p-3"
       : width < 768
       ? "h-[115px] w-[115px] p-3"
