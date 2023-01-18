@@ -20,7 +20,7 @@ module.exports = {
         darkText: "hsl(229, 25%, 31%)",
         scoreText: "hsl(229, 64%, 46%)",
         headerOutline: "hsl(217, 16%, 45%)",
-        pentagon: "hsl(214, 47%, 14%)",
+        pentagon: "hsl(214, 47%, 13%)",
 
         //background
         radialGradientFrom: "hsl(214, 47%, 23%)",

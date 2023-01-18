@@ -8,5 +8,12 @@ html,
 body,
 #root,
 .app {
-  @apply h-screen w-screen font-barlow;
+  @apply grid h-screen 
+  w-screen 
+  place-content-center 
+  bg-gradient-to-b
+  from-radialGradientFrom
+  to-radialGradientTo
+  font-barlow
+  text-white;
 }

@@ -31,7 +31,7 @@ const Home: NextPage = () => {
   })(windowDims);
 
   return (
-    <MainWrapper state={state}>
+    <MainWrapper state={state} windowSize={windowSize}>
       <div className="rows-span-1 col-span-1">
         <ScoreBoard state={state} />
       </div>

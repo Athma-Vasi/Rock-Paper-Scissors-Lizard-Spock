@@ -1,8 +1,9 @@
 import tw from "tailwind-styled-components";
-import type { State } from "../../types";
+import type { State, WindowSize } from "../../types";
 
 type MainWrapperProps = {
   state: State;
+  windowSize: WindowSize;
 };
 
 const MainWrapper = tw.div<MainWrapperProps>`
@@ -10,17 +11,23 @@ const MainWrapper = tw.div<MainWrapperProps>`
   grid-cols-1
   grid-rows-[9]
 
-  h-screen
-  w-full
-  p-6
-
-  bg-gradient-to-b
-  from-radialGradientFrom
-  to-radialGradientTo
-  text-white
+  h-screen  
+  p-6 
   
   z-0
 
+  outline-double
+
+  ${({ windowSize: { width = 0 } }) =>
+    width < 640
+      ? "w-full"
+      : width < 768
+      ? "w-[full]"
+      : width < 1024
+      ? "w-full"
+      : width < 1280
+      ? "w-full"
+      : "w-full"}
 
 `;
 
