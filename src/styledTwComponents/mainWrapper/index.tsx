@@ -36,8 +36,6 @@ const MainWrapper = tw.div<MainWrapperProps>`
   
   z-0
 
-  outline-double
-
   relative
 
 `;

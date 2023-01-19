@@ -36,11 +36,9 @@ const Board = tw.div<BoardProps>`
     state: {
       appState: { isGameStarted },
     },
-  }) => (isGameStarted ? "py-[59px] mb-16" : "py-8")}
+  }) => (isGameStarted ? "py-[59px] mb-[24px]" : "py-8")}
   
   
-
-  outline-dotted
 `;
 
 export { Board };

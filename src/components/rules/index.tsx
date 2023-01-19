@@ -12,12 +12,7 @@ type RulesProps = {
   dispatch: React.Dispatch<Dispatch>;
 };
 
-function Rules({
-  state,
-  action,
-  dispatch,
-  windowsize: { width = 0 },
-}: RulesProps) {
+function Rules({ state, action, dispatch }: RulesProps) {
   function handleRulesClick() {
     // event: React.MouseEvent<HTMLHeadingElement, MouseEvent>
     state.appState.wasRulesClicked = true;
@@ -54,7 +49,7 @@ function Rules({
       />
     </div>
   ) : (
-    <div className="col-span-1 row-start-[8] row-end-[9] grid h-full w-full place-content-center p-4 outline-dashed">
+    <div className="col-span-1 row-start-[8] row-end-[9] grid h-full w-full place-content-center p-4 ">
       <h2
         className="w-full cursor-pointer rounded-lg border-2 border-headerOutline py-2 px-8 text-2xl tracking-widest"
         onClick={handleRulesClick}

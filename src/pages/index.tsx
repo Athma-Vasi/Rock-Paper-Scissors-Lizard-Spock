@@ -61,7 +61,7 @@ const Home: NextPage = () => {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.618, delay: 0.5, ease: "easeInOut" }}
-              className="col-span-1 row-span-1 flex flex-col items-center justify-center gap-y-4 outline-dashed"
+              className="col-span-1 row-span-1 flex flex-col items-center justify-center gap-y-4 "
             >
               {state.appState.playerChoice === "rock" ? (
                 <Rock
@@ -110,8 +110,8 @@ const Home: NextPage = () => {
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
-              transition={{ duration: 0.618, delay: 1.62, ease: "easeInOut" }}
-              className="col-span-1 row-span-1 flex flex-col items-center justify-center gap-y-4 outline-dashed"
+              transition={{ duration: 0.618, delay: 1.5, ease: "easeInOut" }}
+              className="col-span-1 row-span-1 flex flex-col items-center justify-center gap-y-4 "
             >
               {state.appState.computerChoice === "rock" ? (
                 <Rock
@@ -162,8 +162,8 @@ const Home: NextPage = () => {
             <motion.h2
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
-              transition={{ duration: 0.618, delay: 2.62, ease: "easeInOut" }}
-              className={`${state.designState.winnerColour ?? ""} text-3xl`}
+              transition={{ duration: 0.618, delay: 2.5, ease: "easeInOut" }}
+              className={`${state.designState.winnerColour ?? ""} text-5xl`}
             >
               {state.appState.winner === "player"
                 ? "YOU WIN"
