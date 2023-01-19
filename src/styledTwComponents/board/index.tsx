@@ -9,16 +9,35 @@ type BoardProps = {
 const Board = tw.div<BoardProps>`
   
   h-full
-  w-full
+  ${({ windowsize: { width = 0, height = 0 } }) =>
+    width < 400 && height < 700
+      ? "w-[290.4px]"
+      : width < 400 && height < 850
+      ? "w-[290.4px]"
+      : width < 450 && height < 900
+      ? "w-[371.22px]"
+      : width < 450 && height < 950
+      ? "w-[371.22px]"
+      : width < 768 && height < 950
+      ? "w-[419.7px]"
+      : width < 1024 && height < 950
+      ? "w-[452px]"
+      : "w-[532.85px]"}
   relative
   
   row-start-2 row-end-[8]
   col-span-1
-    
+  
   grid
   grid-cols-[29]
   grid-rows-[26]
-  py-8
+
+  ${({
+    state: {
+      appState: { isGameStarted },
+    },
+  }) => (isGameStarted ? "py-[59px] mb-16" : "py-8")}
+  
   
 
   outline-dotted

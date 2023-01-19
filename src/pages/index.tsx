@@ -16,6 +16,7 @@ import { Lizard } from "../components/lizard";
 import { Spock } from "../components/spock";
 import { Rules } from "../components/rules";
 import { Pentagon } from "../components/pentagon";
+import { motion } from "framer-motion";
 
 const Home: NextPage = () => {
   const [state, dispatch] = useReducer(reducer, initialState);
@@ -58,7 +59,12 @@ const Home: NextPage = () => {
           {/* player and computer icons section */}
           <div className="col-span-1 row-start-1 row-end-[20] grid grid-cols-2">
             {/* player choice section */}
-            <div className="col-span-1 row-span-1 flex flex-col items-center justify-center outline-dashed">
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.618, delay: 0.5, ease: "easeInOut" }}
+              className="col-span-1 row-span-1 flex flex-col items-center justify-center gap-y-4 outline-dashed"
+            >
               {state.appState.playerChoice === "rock" ? (
                 <Rock
                   state={state}
@@ -101,9 +107,14 @@ const Home: NextPage = () => {
                 />
               )}
               <p>YOU PICKED</p>
-            </div>
+            </motion.div>
             {/* computer choice section */}
-            <div className="col-span-1 row-span-1 flex flex-col items-center justify-center outline-dashed">
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.618, delay: 1.62, ease: "easeInOut" }}
+              className="col-span-1 row-span-1 flex flex-col items-center justify-center gap-y-4 outline-dashed"
+            >
               {state.appState.computerChoice === "rock" ? (
                 <Rock
                   state={state}
@@ -146,17 +157,22 @@ const Home: NextPage = () => {
                 />
               )}
               <p>HOUSE PICKED</p>
-            </div>
+            </motion.div>
           </div>
           {/* winner section */}
           <div className="col-span-1 row-start-[21] row-end-[27] flex flex-col items-center justify-around">
-            <h2 className={`${state.designState.winnerColour ?? ""} text-3xl`}>
+            <motion.h2
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.618, delay: 2.62, ease: "easeInOut" }}
+              className={`${state.designState.winnerColour ?? ""} text-3xl`}
+            >
               {state.appState.winner === "player"
                 ? "YOU WIN"
                 : state.appState.winner === "computer"
                 ? "HOUSE WINS"
                 : "DRAW"}
-            </h2>
+            </motion.h2>
             <button
               className="rounded-lg bg-[#f2f2f2] py-2 px-4 text-2xl font-bold tracking-widest text-[#333]"
               onClick={handlePlayAgainClick}
