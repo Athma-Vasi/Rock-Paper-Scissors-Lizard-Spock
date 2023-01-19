@@ -1,3 +1,4 @@
+import { motion } from "framer-motion";
 import React from "react";
 import type { State } from "../../types";
 
@@ -18,9 +19,21 @@ function ScoreBoard({ state }: ScoreBoardProps) {
       </div>
 
       {/* scoreBoard */}
-      <div className="col-span-1 flex flex-col items-center justify-center rounded-lg bg-white text-darkText outline-dotted">
+
+      <div className="col-span-1 flex flex-col items-center justify-center rounded-lg bg-white text-darkText ">
         <h4 className="tracking-widest">SCORE</h4>
-        <h3 className="text-4xl font-bold">{state.appState.score}</h3>
+        {state.appState.isGameStarted ? (
+          <motion.h3
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.5, delay: 3.5, ease: "easeInOut" }}
+            className="text-4xl font-bold"
+          >
+            {state.appState.score}
+          </motion.h3>
+        ) : (
+          <h3 className="text-4xl font-bold">{state.appState.score}</h3>
+        )}
       </div>
     </div>
   );

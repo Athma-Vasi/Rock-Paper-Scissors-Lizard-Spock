@@ -46,8 +46,6 @@ const Home: NextPage = () => {
     });
   }
 
-  console.log("windowsize: ", windowsize);
-
   return (
     <MainWrapper state={state} windowsize={windowsize}>
       <div className="rows-span-1 col-span-1">
