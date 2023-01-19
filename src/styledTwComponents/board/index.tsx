@@ -7,6 +7,7 @@ type BoardProps = {
 };
 
 const Board = tw.div<BoardProps>`
+  
   h-full
   w-full
   relative
@@ -17,7 +18,8 @@ const Board = tw.div<BoardProps>`
   grid
   grid-cols-[29]
   grid-rows-[26]
-  py-36
+  py-8
+  
 
   outline-dotted
 `;

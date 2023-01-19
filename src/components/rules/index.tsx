@@ -65,4 +65,4 @@ function Rules({
   );
 }
 
-export default Rules;
+export { Rules };

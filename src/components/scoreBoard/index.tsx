@@ -26,4 +26,4 @@ function ScoreBoard({ state }: ScoreBoardProps) {
   );
 }
 
-export default ScoreBoard;
+export { ScoreBoard };
