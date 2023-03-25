@@ -35,7 +35,7 @@ The rules of this violent game are:
 - [Next.js](https://nextjs.org/)
 - [Vercel](https://vercel.com/)
 
-This is a challenge from [Frontend Mentor](https://www.frontendmentor.io/challenges/rock-paper-scissors-game-pTgwgvgH). Sketch and Figma files were for premium users only, so I used the firefox colour picker tool to get the colours. (≧▽≦)
+This is a remake of the [Rock-Paper-Scissors](https://github.com/Athma-Vasi/Rock-Paper-Scissors) Odin Project assignment and I used the challenge from [Frontend Mentor](https://www.frontendmentor.io/challenges/rock-paper-scissors-game-pTgwgvgH) as inspiration. Sketch and Figma files were for premium users only, so I used the firefox colour picker tool to get the colours. (≧▽≦)
 
 **Here is the challenge brief**
 
