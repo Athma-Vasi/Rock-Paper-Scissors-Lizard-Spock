@@ -15,6 +15,15 @@ The rules of this violent game are:
 - Spock vaporizes Rock
 - Rock crushes Scissors
 
+#### Screenshots
+
+<div align="center">
+  <img src="./src/assets/screenshots/main-page.png" alt="main page" width="100px" />
+  <img src="./src/assets/screenshots/rules-page.png" alt="rules page" width="100px" />
+  <img src="./src/assets/screenshots/house-wins.png" alt="house wins" width="100px" />
+  <img src="./src/assets/screenshots/player-wins.png" alt="player wins" width="100px" />
+</div>
+
 #### Technologies used
 
 - [React](https://react.dev/)
