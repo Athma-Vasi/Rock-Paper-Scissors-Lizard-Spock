@@ -1,28 +1,42 @@
-# Create T3 App
+# Rock-Paper-Scissors-Lizard-Spock
 
-This is a [T3 Stack](https://create.t3.gg/) project bootstrapped with `create-t3-app`.
+This is an implementation of Rock-Paper-Scissors-Lizard-Spock, a variant of the classic game Rock-Paper-Scissors. The game is played against the computer, who each choose from one of five available options.
 
-## What's next? How do I make an app with this?
+The rules of this violent game are:
 
-We try to keep this project as simple as possible, so you can start with just the scaffolding we set up for you, and add additional things later when they become necessary.
+- Scissors cuts Paper
+- Paper covers Rock
+- Rock crushes Lizard
+- Lizard poisons Spock
+- Spock smashes Scissors
+- Scissors decapitates Lizard (๑•́o•̀๑)
+- Lizard eats Paper
+- Paper disproves Spock (,,>﹏<,,)
+- Spock vaporizes Rock
+- Rock crushes Scissors
 
-If you are not familiar with the different technologies used in this project, please refer to the respective docs. If you still are in the wind, please join our [Discord](https://t3.gg/discord) and ask for help.
+#### Technologies used
 
-- [Next.js](https://nextjs.org)
-- [NextAuth.js](https://next-auth.js.org)
-- [Prisma](https://prisma.io)
-- [Tailwind CSS](https://tailwindcss.com)
-- [tRPC](https://trpc.io)
+- [React](https://react.dev/)
+- [TypeScript](https://www.typescriptlang.org/)
+- [Tailwind CSS](https://tailwindcss.com/)
+- [Create-T3-App](https://create-t3-app-docs.vercel.app/en/introduction)
+- [tailwind-styled-components](https://www.npmjs.com/package/tailwind-styled-components)
+- [Cypress](https://www.cypress.io/)
+- [Next.js](https://nextjs.org/)
+- [Vercel](https://vercel.com/)
 
-## Learn More
+This is a challenge from [Frontend Mentor](https://www.frontendmentor.io/challenges/rock-paper-scissors-game-pTgwgvgH). Sketch and Figma files were for premium users only, so I used the firefox colour picker tool to get the colours. (≧▽≦)
 
-To learn more about the [T3 Stack](https://create.t3.gg/), take a look at the following resources:
+**Here is the challenge brief**
 
-- [Documentation](https://create.t3.gg/)
-- [Learn the T3 Stack](https://create.t3.gg/en/faq#what-learning-resources-are-currently-available) — Check out these awesome tutorials
+Your challenge is to build out this Rock, Paper, Scissors game and get it looking as close to the design as possible.
 
-You can check out the [create-t3-app GitHub repository](https://github.com/t3-oss/create-t3-app) — your feedback and contributions are welcome!
+You can use any tools you like to help you complete the challenge. So if you've got something you'd like to practice, feel free to give it a go.
 
-## How do I deploy this?
+Your users should be able to:
 
-Follow our deployment guides for [Vercel](https://create.t3.gg/en/deployment/vercel), [Netlify](https://create.t3.gg/en/deployment/netlify) and [Docker](https://create.t3.gg/en/deployment/docker) for more information.
+- View the optimal layout for the game depending on their device's screen size
+- Play Rock, Paper, Scissors against the computer
+- Maintain the state of the score after refreshing the browser (optional)
+- Bonus: Play Rock, Paper, Scissors, Lizard, Spock against the computer (optional)

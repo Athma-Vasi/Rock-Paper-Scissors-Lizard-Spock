@@ -49,7 +49,7 @@ const Home: NextPage = () => {
   return (
     <MainWrapper state={state} windowsize={windowsize}>
       <div className="rows-span-1 col-span-1">
-        <ScoreBoard state={state} />
+        <ScoreBoard state={state} data-cy="header" />
       </div>
       {/*  */}
       {state.appState.isGameStarted ? (
@@ -70,6 +70,7 @@ const Home: NextPage = () => {
                   dispatch={dispatch}
                   windowsize={windowsize}
                   coloursMap={coloursMap}
+                  data-cy="rock"
                 />
               ) : state.appState.playerChoice === "paper" ? (
                 <Paper
@@ -78,6 +79,7 @@ const Home: NextPage = () => {
                   dispatch={dispatch}
                   windowsize={windowsize}
                   coloursMap={coloursMap}
+                  data-cy="paper"
                 />
               ) : state.appState.playerChoice === "scissors" ? (
                 <Scissors
@@ -86,6 +88,7 @@ const Home: NextPage = () => {
                   dispatch={dispatch}
                   windowsize={windowsize}
                   coloursMap={coloursMap}
+                  data-cy="scissors"
                 />
               ) : state.appState.playerChoice === "lizard" ? (
                 <Lizard
@@ -94,6 +97,7 @@ const Home: NextPage = () => {
                   dispatch={dispatch}
                   windowsize={windowsize}
                   coloursMap={coloursMap}
+                  data-cy="lizard"
                 />
               ) : (
                 <Spock
@@ -102,6 +106,7 @@ const Home: NextPage = () => {
                   dispatch={dispatch}
                   windowsize={windowsize}
                   coloursMap={coloursMap}
+                  data-cy="spock"
                 />
               )}
               <p>YOU PICKED</p>
@@ -120,6 +125,7 @@ const Home: NextPage = () => {
                   dispatch={dispatch}
                   windowsize={windowsize}
                   coloursMap={coloursMap}
+                  data-cy="rock"
                 />
               ) : state.appState.computerChoice === "paper" ? (
                 <Paper
@@ -128,6 +134,7 @@ const Home: NextPage = () => {
                   dispatch={dispatch}
                   windowsize={windowsize}
                   coloursMap={coloursMap}
+                  data-cy="paper"
                 />
               ) : state.appState.computerChoice === "scissors" ? (
                 <Scissors
@@ -136,6 +143,7 @@ const Home: NextPage = () => {
                   dispatch={dispatch}
                   windowsize={windowsize}
                   coloursMap={coloursMap}
+                  data-cy="scissors"
                 />
               ) : state.appState.computerChoice === "lizard" ? (
                 <Lizard
@@ -144,6 +152,7 @@ const Home: NextPage = () => {
                   dispatch={dispatch}
                   windowsize={windowsize}
                   coloursMap={coloursMap}
+                  data-cy="lizard"
                 />
               ) : (
                 <Spock
@@ -152,6 +161,7 @@ const Home: NextPage = () => {
                   dispatch={dispatch}
                   windowsize={windowsize}
                   coloursMap={coloursMap}
+                  data-cy="spock"
                 />
               )}
               <p>HOUSE PICKED</p>
@@ -225,6 +235,7 @@ const Home: NextPage = () => {
         action={action}
         dispatch={dispatch}
         windowsize={windowsize}
+        data-cy="rules"
       />
     </MainWrapper>
   );
@@ -232,118 +243,3 @@ const Home: NextPage = () => {
 //w:29, h:26
 
 export default Home;
-
-/**
- <div className="row-start-2 row-end-[8] grid h-[650px] grid-cols-[29] grid-rows-[26]">
-          <div className="col-end-30 row-end-20 col-start-1 row-start-1 flex flex-row items-center justify-center">
-            <div className="flex flex-col items-center justify-center">
-              {state.appState.playerChoice === "rock" ? (
-                <Rock
-                  state={state}
-                  windowsize={windowsize}
-                  action={action}
-                  dispatch={dispatch}
-                  coloursMap={coloursMap}
-                />
-              ) : state.appState.playerChoice === "paper" ? (
-                <Paper
-                  state={state}
-                  windowsize={windowsize}
-                  action={action}
-                  dispatch={dispatch}
-                  coloursMap={coloursMap}
-                />
-              ) : state.appState.playerChoice === "scissors" ? (
-                <Scissors
-                  state={state}
-                  windowsize={windowsize}
-                  action={action}
-                  dispatch={dispatch}
-                  coloursMap={coloursMap}
-                />
-              ) : state.appState.playerChoice === "lizard" ? (
-                <Lizard
-                  state={state}
-                  windowsize={windowsize}
-                  action={action}
-                  dispatch={dispatch}
-                  coloursMap={coloursMap}
-                />
-              ) : (
-                <Spock
-                  state={state}
-                  windowsize={windowsize}
-                  action={action}
-                  dispatch={dispatch}
-                  coloursMap={coloursMap}
-                />
-              )}
-              <p>YOU PICKED</p>
-            </div>
-            <div className="flex flex-col items-center justify-center">
-              {state.appState.computerChoice === "rock" ? (
-                <Rock
-                  state={state}
-                  windowsize={windowsize}
-                  coloursMap={coloursMap}
-                  action={action}
-                  dispatch={dispatch}
-                />
-              ) : state.appState.computerChoice === "paper" ? (
-                <Paper
-                  state={state}
-                  windowsize={windowsize}
-                  coloursMap={coloursMap}
-                  action={action}
-                  dispatch={dispatch}
-                />
-              ) : state.appState.computerChoice === "scissors" ? (
-                <Scissors
-                  state={state}
-                  windowsize={windowsize}
-                  coloursMap={coloursMap}
-                  action={action}
-                  dispatch={dispatch}
-                />
-              ) : state.appState.computerChoice === "lizard" ? (
-                <Lizard
-                  state={state}
-                  windowsize={windowsize}
-                  coloursMap={coloursMap}
-                  action={action}
-                  dispatch={dispatch}
-                />
-              ) : (
-                <Spock
-                  state={state}
-                  windowsize={windowsize}
-                  coloursMap={coloursMap}
-                  action={action}
-                  dispatch={dispatch}
-                />
-              )}
-              <p>HOUSE PICKED</p>
-            </div>
-          </div>
-          
-          <div className="col-start-1 col-end-[30] row-start-[21] row-end-[27] flex flex-col items-center justify-center">
-            <p
-              className={`${
-                state.designState.winnerColour ?? ""
-              } text-2xl font-bold`}
-            >
-              {state.appState.winner === "player"
-                ? "YOU WIN"
-                : state.appState.winner === "computer"
-                ? "HOUSE WINS"
-                : "DRAW"}
-            </p>
-            <button
-              className="cursor-pointer rounded-lg border-2 border-headerOutline py-2 px-8 text-2xl tracking-widest"
-              onClick={handlePlayAgainClick}
-            >
-              PLAY AGAIN
-            </button>
-          </div>
-        </div>
- */

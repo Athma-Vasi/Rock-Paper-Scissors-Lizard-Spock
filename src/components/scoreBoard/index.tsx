@@ -32,7 +32,9 @@ function ScoreBoard({ state }: ScoreBoardProps) {
             {state.appState.score}
           </motion.h3>
         ) : (
-          <h3 className="text-4xl font-bold">{state.appState.score}</h3>
+          <h3 data-cy="scoreboard" className="text-4xl font-bold">
+            {state.appState.score}
+          </h3>
         )}
       </div>
     </div>
